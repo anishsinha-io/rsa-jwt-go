@@ -4,12 +4,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/anish-sinha1/sign-token-rsa/internal/util/token"
-	"github.com/anish-sinha1/sign-token-rsa/models"
+	"github.com/anish-sinha1/sign-token-rsa/internal/token"
 )
 
 var (
-	Validator *models.KeyPair
+	Validator *token.KeyPair
 )
 
 func init() {

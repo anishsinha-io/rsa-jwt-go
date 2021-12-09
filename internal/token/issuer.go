@@ -2,8 +2,6 @@ package token
 
 import (
 	"io/ioutil"
-
-	"github.com/anish-sinha1/sign-token-rsa/models"
 )
 
 const (
@@ -11,14 +9,14 @@ const (
 	publicKeyPath  = "../../config/rsa/public_key.pem"
 )
 
-func LoadKeyPair(privateKey, publicKey []byte) *models.KeyPair {
-	return &models.KeyPair{
+func LoadKeyPair(privateKey, publicKey []byte) *KeyPair {
+	return &KeyPair{
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
 	}
 }
 
-func TokenValidator() (*models.KeyPair, error) {
+func TokenValidator() (*KeyPair, error) {
 	privateKey, err := ioutil.ReadFile(privateKeyPath)
 	if err != nil {
 		return nil, err
